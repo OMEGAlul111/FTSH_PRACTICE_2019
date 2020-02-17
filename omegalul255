@@ -1,0 +1,49 @@
+import numpy as np
+import math
+
+print('введите n')
+n=int(input())
+
+print('введите вектор')
+a0=int(input())
+b0=int(input())
+
+
+iii=0
+print('Введите m'+str(iii))
+m=complex(input())
+print('Введите гамма'+str(iii))
+y=complex(input())
+print('Введите z'+str(iii))
+z=complex(input())
+
+b=np.array([a0,b0])
+
+for i in range(n):
+    iii=i+1
+    print('Введите m'+str(iii))
+    mm=m
+    m=complex(input())
+    print('Введите гамма'+str(iii))
+    yy=y
+    y=complex(input())
+    print('Введите z'+str(iii))
+    zz=z
+    z=complex(input())
+
+    giga=0-1j
+
+    a00=(1/2)*(1+(yy*m)/(y+mm))*(math.e**(giga*(y-yy)*zz))
+    a01=(1/2)*(1-(yy*m)/(y+mm))*(math.e**(-giga*(y-yy)*zz))
+    a10=(1/2)*(1-(yy*m)/(y+mm))*(math.e**(giga*(y-yy)*zz))
+    a11=(1/2)*(1+(yy*m)/(y+mm))*(math.e**(-giga*(y-yy)*zz))
+
+    
+    a=np.array([[a00,a01],[a10,a11]])
+    
+    
+    b=a.dot(b)
+    
+    
+print(b[0])
+print(b[1])
