@@ -33,13 +33,14 @@ for i in range(n):
 
     giga=0-1j
 
-    a00=(1/2)*(1+(yy*m)/(y+mm))*(math.e**(giga*(y-yy)*zz))
-    a01=(1/2)*(1-(yy*m)/(y+mm))*(math.e**(-giga*(y-yy)*zz))
-    a10=(1/2)*(1-(yy*m)/(y+mm))*(math.e**(giga*(y-yy)*zz))
-    a11=(1/2)*(1+(yy*m)/(y+mm))*(math.e**(-giga*(y-yy)*zz))
+    a00=(1+(yy*m)/(y+mm))*(np.exp(giga*(y-yy)*zz))
+    a01=(1-(yy*m)/(y+mm))*(np.exp(-giga*(y-yy)*zz))
+    a10=(1-(yy*m)/(y+mm))*(np.exp(giga*(y-yy)*zz))
+    a11=(1+(yy*m)/(y+mm))*(np.exp(-giga*(y-yy)*zz))
 
     
     a=np.array([[a00,a01],[a10,a11]])
+    a=(1/2)*a
     
     
     b=a.dot(b)
