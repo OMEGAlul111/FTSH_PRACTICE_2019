@@ -45,6 +45,5 @@ for i in range(n):
     
     b=a.dot(b)
     
-    
-print(b[0])
-print(b[1])
+    print(b[0])
+    print(b[1])
